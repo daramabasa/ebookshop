@@ -47,7 +47,7 @@
 				
 			%>
 			<tr>
-				<td><input type="checkbox" name=id" value="<%=id %>"></td>
+				<td><input type="checkbox" name="id" value="<%=id %>"></td>
 				<td><%=rs.getString("author") %></td>
 				<td><%=rs.getString("title") %></td>
 				<td><%=rs.getInt("price") %></td>
