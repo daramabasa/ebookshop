@@ -63,5 +63,7 @@
 			<td><%=email %></td>
 		</tr>
 	</table>
+	<br><br>
+	<a href="list.jsp">게시글 목록 보기</a>
 </body>
 </html>
