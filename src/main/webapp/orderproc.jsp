@@ -1,11 +1,40 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*, javax.sql.*, javax.naming.*" %>
+<%@ page import="db.JDBCConnection" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>주문 처리 화면</title>
+<style>
+	h1, h2 {
+		text-align: center;
+	}
+	
+	table {
+		margin: 0 auto;
+		text-align: center;
+		
+		border-collapse: collapse;
+	}
+		th { background-color: #eee; }
+		
+	a {
+		display: block;
+		width: 200px; height: 25px;
+		padding: 10px 20px;
+		margin: 20px auto;
+		
+		background-color: #eee;
+		border-radius: 10px;
+		color: black;
+		
+		text-decoration: none;
+		text-align: center;
+	}
+		a > h4 { line-height: 25px; margin: 0; padding: 0; }
+</style>
 </head>
 <body>
 	<h1>인터넷 프로그래머 서점</h1>
@@ -16,8 +45,22 @@
 	
 		if(ids != null) {
 			
-			Class.forName("org.mariadb.jdbc.Driver");
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ebookshop", "java", "java");
+			Connection conn = null;
+			
+			try {
+				String driver = application.getInitParameter("MariaDBDriver");
+				String url = application.getInitParameter("BookURL");
+				String DBid = application.getInitParameter("MariaDBId");
+				String DBpasswd = application.getInitParameter("MariaDBPasswd");
+				
+				JDBCConnection jdbc = new JDBCConnection(driver, url, DBid, DBpasswd);
+				conn = jdbc.conn;
+			} catch(Exception e) {
+				out.println("데이터베이스 접속에 문제가 발생했습니다.<hr>");
+				out.println(e.getMessage());
+				e.printStackTrace();
+			}
+			
 			Statement stmt = conn.createStatement();
 			
 			String sql;
@@ -26,7 +69,7 @@
 			
 			System.out.println("연결 완료");
 	%>
-		<table border=2>
+		<table border=1 cellpadding=5>
 			<tr>
 				<th>저자</th>
 				<th>제목</th>
@@ -58,6 +101,6 @@
 		}
 	%>
 		</table>
-		<a href="order.jsp"><h3>주문 화면으로 돌아가기</h3></a>
+		<a href="order.jsp"><h4>주문 화면으로 돌아가기</h4></a>
 </body>
 </html>

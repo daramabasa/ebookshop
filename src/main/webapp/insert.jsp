@@ -1,7 +1,9 @@
+<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*, javax.sql.*, javax.naming.*" %>
 <%@ page import="java.text.* " %>
+<%@ page import="db.JDBCConnection" %>
 <% request.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE html>
 <html>
@@ -16,7 +18,11 @@
 	email = request.getParameter("email");
 	subject = request.getParameter("subject");
 	memo = request.getParameter("memo");
-	time = request.getParameter("time");
+	
+	Date now = new Date();
+	SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 a hh:mm:ss");
+	
+	time = sf.format(now);
 	
 	Connection conn = null;
 	PreparedStatement pstmt = null;
@@ -24,8 +30,13 @@
 	String sql;
 	
 	try {
-		Class.forName("org.mariadb.jdbc.Driver");
-		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/board", "java", "java");
+		String driver = application.getInitParameter("MariaDBDriver");
+		String url = application.getInitParameter("BoardURL");
+		String DBid = application.getInitParameter("MariaDBId");
+		String DBpasswd = application.getInitParameter("MariaDBPasswd");
+		
+		JDBCConnection jdbc = new JDBCConnection(driver, url, DBid, DBpasswd);
+		conn = jdbc.conn;
 	} catch(Exception e) {
 		out.println("데이터베이스 접속에 문제가 발생했습니다.<hr>");
 		out.println(e.getMessage());

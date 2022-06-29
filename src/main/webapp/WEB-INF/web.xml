@@ -9,4 +9,33 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
+  
+    <context-param>
+  	<param-name>MariaDBDriver</param-name>
+  	<param-value>org.mariadb.jdbc.Driver</param-value>
+  </context-param>
+  
+  <context-param>
+  	<param-name>BookURL</param-name>
+  	<param-value>jdbc:mysql://localhost:3306/ebookshop</param-value>
+  </context-param>
+  
+  <context-param>
+	<param-name>BoardURL</param-name>
+	<param-value>jdbc:mysql://localhost:3306/board</param-value>
+  </context-param>
+  
+  <context-param>
+  	<param-name>MariaDBId</param-name>
+  	<param-value>java</param-value>
+  </context-param>
+  
+  <context-param>
+  	<param-name>MariaDBPasswd</param-name>
+  	<param-value>java</param-value>
+  </context-param>
+  
+  <session-config>
+  	<session-timeout>20</session-timeout>
+  </session-config>
 </web-app>
