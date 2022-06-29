@@ -7,7 +7,7 @@
 	String passwd = (String) request.getParameter("passwd");
 
 	Connection conn = null;
-	Statement stmt = null;
+	PreparedStatement pstmt = null;
 	ResultSet rs = null;
 	
 	try {
@@ -19,10 +19,13 @@
 		e.printStackTrace();
 	}
 	
-	String sql = "SELECT * FROM member WHERE id=" + id + " AND passwd=" + passwd;
+	String sql = "SELECT * FROM member WHERE id=? AND passwd=?";
 	
-	stmt = conn.createStatement();
-	rs = stmt.executeQuery(sql);
+	pstmt = conn.prepareStatement(sql);
+	pstmt.setString(1, id);
+	pstmt.setString(2, passwd);
+	
+	rs = pstmt.executeQuery();
 	
 	if(rs.next()) {
 		session.setAttribute("id", id);
@@ -36,6 +39,6 @@
 	}
 	
 	rs.close();
-	stmt.close();
+	pstmt.close();
 	conn.close();
 %>

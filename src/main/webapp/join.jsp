@@ -11,10 +11,10 @@
 	<form action="joinProcess.jsp" method="POST">
 		<label for="id">아이디: </label>
 		<input type="text" name="id" id="id"><br>
-		<label for="passwd">비밀번호: </label><br>
-		<input type="password" name="passwd" id="passwd">
-		<label for="name">이름: </label><br>
-		<input type="text" name="name" id="name">
+		<label for="passwd">비밀번호: </label>
+		<input type="password" name="passwd" id="passwd"><br>
+		<label for="name">이름: </label>
+		<input type="text" name="name" id="name"><br>
 		<br><br>
 		<input type="submit" value="회원가입">
 		<input type="reset" value="초기화하기">
