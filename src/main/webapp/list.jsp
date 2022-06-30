@@ -22,7 +22,7 @@
 	}
 	
 	table a {
-		color: #aaa;
+		color: #56BCCB;
 	}
 		table a:visited {
 			color: #444;
@@ -44,8 +44,8 @@
 		
 		display: inline-block;
 		
-		color: black;
-		background-color: #eee;
+		color: white;
+		background-color: #56BCCB;
 		border-radius: 5px;
 		
 		text-align: center;

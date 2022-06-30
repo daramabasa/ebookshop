@@ -39,6 +39,11 @@
 			}
 	input[type='submit'], input[type='reset'] {
 		width: 180px; height: 30px;
+		
+		background-color: #56BCCB;
+		color: white;
+		border: none;
+		border-radius: 5px;
 	}
 	
 	a {

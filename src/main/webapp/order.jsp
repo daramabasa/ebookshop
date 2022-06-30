@@ -44,13 +44,13 @@
 	
 	a {
 		display: block;
-		width: 300px; height: 25px;
+		width: 200px; height: 25px;
 		padding: 10px 20px;
 		margin: 20px auto;
 		
-		background-color: #eee;
+		background-color: #56BCCB;
 		border-radius: 10px;
-		color: black;
+		color: white;
 		
 		text-decoration: none;
 		text-align: center;

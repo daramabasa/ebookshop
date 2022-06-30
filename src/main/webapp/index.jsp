@@ -28,8 +28,8 @@
 		
 		display: block;
 		
-		color: black;
-		background-color: #eee;
+		color: white;
+		background-color: #56BCCB;
 		border-radius: 5px;
 		
 		text-align: center;
@@ -42,7 +42,7 @@
 </head>
 <body>
 	<h2>온라인 서점 사이트</h2>
-<% if (name != "") { %>
+<% if (id != "" && name != "") { %>
 	<h5><%=name %>님 환영합니다.</h5>
 <% } %>
 <% if (id == "" || name == ""){ %>

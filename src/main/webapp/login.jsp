@@ -20,6 +20,10 @@
 		
 		input[type='submit'] {
 			margin-top: 10px;
+			background-color: #56BCCB;
+			border: none;
+			border-radius: 5px;
+			color: white;
 		}
 	
 	#aArea {
@@ -37,8 +41,8 @@
 </head>
 <body>
 	<form action="loginProcess.jsp" method="POST">
-		<input type="text" name="id" id="id" placeholder="아이디"><br>
-		<input type="password" name="passwd" id="passwd" placeholder="비밀번호"><br>
+		<input type="text" name="id" id="id" placeholder="아이디" required="required"><br>
+		<input type="password" name="passwd" id="passwd" placeholder="비밀번호" required="required"><br>
 		<input type="submit" value="로그인">
 	</form>
 	<br>
