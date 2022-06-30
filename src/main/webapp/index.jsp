@@ -28,8 +28,8 @@
 		
 		display: block;
 		
-		color: white;
-		background-color: #56BCCB;
+		color: black;
+		background-color: #eee;
 		border-radius: 5px;
 		
 		text-align: center;

@@ -10,6 +10,9 @@
 <head>
 <meta charset="UTF-8">
 <title>게시글 등록 상황</title>
+	<style>
+		h3 { text-align: center; }
+	</style>
 </head>
 <body>
 <%

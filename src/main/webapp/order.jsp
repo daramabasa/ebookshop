@@ -48,9 +48,9 @@
 		padding: 10px 20px;
 		margin: 20px auto;
 		
-		background-color: #56BCCB;
 		border-radius: 10px;
-		color: white;
+		color: black;
+		background-color: #eee;
 		
 		text-decoration: none;
 		text-align: center;

@@ -20,15 +20,6 @@
 		margin: 0 auto;
 		border-collapse: collapse;
 	}
-	
-	table a {
-		color: #56BCCB;
-	}
-		table a:visited {
-			color: #444;
-			font-weight: bold;
-		}
-		
 		td, th {
 			padding: 3px 8px;
 			
@@ -44,8 +35,8 @@
 		
 		display: inline-block;
 		
-		color: white;
-		background-color: #56BCCB;
+		color: black;
+		background-color: #eee;
 		border-radius: 5px;
 		
 		text-align: center;

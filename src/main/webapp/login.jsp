@@ -20,10 +20,12 @@
 		
 		input[type='submit'] {
 			margin-top: 10px;
-			background-color: #56BCCB;
+			
+			color: black;
+			background-color: #eee;
+			
 			border: none;
 			border-radius: 5px;
-			color: white;
 		}
 	
 	#aArea {

@@ -26,9 +26,9 @@
 		padding: 10px 20px;
 		margin: 20px auto;
 		
-		background-color: #56BCCB;
+		color: black;
+		background-color: #eee;
 		border-radius: 10px;
-		color: white;
 		
 		text-decoration: none;
 		text-align: center;
