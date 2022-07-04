@@ -14,7 +14,8 @@ public class JDBCConnection {
 	
 	public JDBCConnection(String driver, String url, String id, String passwd) {
 		try {
-			Class.forName("org.mariadb.jdbc.Driver");
+			
+			Class.forName(driver);
 			
 			conn = DriverManager.getConnection(url, id, passwd);
 			
